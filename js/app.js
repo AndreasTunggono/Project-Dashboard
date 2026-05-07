@@ -6,12 +6,12 @@ function save() {
 
 function addProject() {
   const p = {
-    name: names.value,
+    names: names.value,
     category: category.value,
     type: type.value,
     start: start.value,
     end: end.value,
-    status: statusproject.value,
+    statusproject: statusproject.value,
     progress: progress.value
   };
 
@@ -51,7 +51,7 @@ function render() {
 
   renderChart("statusChart", "pie", statusCount);
   renderChart("typeChart", "doughnut", typeCount);
-  renderChart("progressChart", "bar", {labels: projects.map(p=>p.name), data: progressData});
+  renderChart("progressChart", "bar", {labels: projects.map(p=>p.names), data: progressData});
 }
 
 let charts = {};
