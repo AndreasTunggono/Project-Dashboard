@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AT Project Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>AT Project Dashboard</h1>
+</header>
+
+<main class="container">
+
+<section class="form-section">
+  <h2>Add Project</h2>
+  <input id="name" placeholder="Project Name">
+  <input id="category" placeholder="Category (e.g. Finance)">
+  <input id="type" placeholder="Type (Internal / External)">
+  <input id="start" type="date">
+  <input id="end" type="date">
+  <select id="status">
+    <option>Planning</option>
+    <option>Analysis</option>
+    <option>Design</option>
+    <option>Implementation</option>
+    <option>Maintenance</option>
+  </select>
+  <input id="progress" type="number" placeholder="Progress %">
+  <button onclick="addProject()">Add</button>
+</section>
+
+<section class="table-section">
+  <h2>Project List</h2>
+  <table id="projectTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Progress</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section class="charts">
+  <div class="chart-box">
+    <h3>Status Distribution</h3>
+    <canvas id="statusChart"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Project Type</h3>
+    <canvas id="typeChart"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Progress Overview</h3>
+    <canvas id="progressChart"></canvas>
+  </div>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

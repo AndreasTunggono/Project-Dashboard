@@ -1,0 +1,66 @@
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+  margin: 0;
+}
+
+header {
+  background: #1f2937;
+  color: white;
+  padding: 15px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.form-section input, .form-section select {
+  margin: 5px;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.Planning { background: #A7E1FD; color:black; }
+.Analysis { background: #3B77D8; }
+.Design { background: #FFE8A1; color:black; }
+.Implementation { background: #E4BC3D; color:black; }
+.Maintenance { background: #C4DFB3; color:black; }
+
+.progress-bar {
+  height: 8px;
+  background: green;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.chart-box {
+  background: white;
+  padding: 10px;
+}
