@@ -6,12 +6,12 @@ function save() {
 
 function addProject() {
   const p = {
-    name: name.value,
+    name: names.value,
     category: category.value,
     type: type.value,
     start: start.value,
     end: end.value,
-    status: status.value,
+    status: statusproject.value,
     progress: progress.value
   };
 
@@ -34,17 +34,17 @@ function render() {
     const duration = p.start && p.end ? (new Date(p.end) - new Date(p.start)) / (1000*60*60*24) + " days" : "-";
 
     tr.innerHTML = `
-      <td>${p.name}</td>
+      <td>${p.names}</td>
       <td>${p.category}</td>
       <td>${p.type}</td>
-      <td><span class="status ${p.status}">${p.status}</span></td>
+      <td><span class="status ${p.statusproject}">${p.statusproject}</span></td>
       <td>${p.progress}% <div class="progress-bar" style="width:${p.progress}%"></div></td>
       <td>${duration}</td>
     `;
 
     tbody.appendChild(tr);
 
-    statusCount[p.status] = (statusCount[p.status] || 0) + 1;
+    statusCount[p.statusproject] = (statusCount[p.statusproject] || 0) + 1;
     typeCount[p.type] = (typeCount[p.type] || 0) + 1;
     progressData.push(p.progress);
   });
