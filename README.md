@@ -1,4 +1,4 @@
-# Project Management Dashboard v3
+# Project Management Dashboard Sample
 
 A project I worked on to simulate a more realistic project monitoring dashboard with enhanced UI and multiple data visualizations.
 
