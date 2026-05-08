@@ -1,38 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>AT Project Dashboard</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AT Project Dashboard</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <header>
-  <h1>AT Project Dashboard</h1>
+  <div>
+    <h1>AT Project Dashboard</h1>
+    <p>Sample Project Monitoring System</p>
+  </div>
+
+  <div class="summary-cards">
+    <div class="card">
+      <span>Total Projects</span>
+      <h2 id="totalProjects">0</h2>
+    </div>
+
+    <div class="card">
+      <span>Avg Progress</span>
+      <h2 id="avgProgress">0%</h2>
+    </div>
+
+    <div class="card">
+      <span>Completed</span>
+      <h2 id="completedProjects">0</h2>
+    </div>
+  </div>
 </header>
 
 <main class="container">
 
 <section class="form-section">
   <h2>Add Project</h2>
-  <input id="names" placeholder="Project Name">
-  <input id="category" placeholder="Category (e.g. Finance)">
-  <input id="type" placeholder="Type (Internal / External)">
-  <input id="start" type="date">
-  <input id="end" type="date">
-  <select id="statusproject">
+
+  <div class="form-grid">
+    <input id="projectName" placeholder="Project Name">
+
+    <select id="category">
+      <option value="">Select Category</option>
+      <option>Finance</option>
+      <option>Infrastructure</option>
+      <option>Cloud</option>
+      <option>Security</option>
+      <option>Application</option>
+    </select>
+
+    <select id="type">
+      <option value="">Select Type</option>
+      <option>Internal</option>
+      <option>External</option>
+    </select>
+
+    <input id="start" type="date">
+    <input id="end" type="date">
+
+    <select id="statusproject">
+      <option>Planning</option>
+      <option>Analysis</option>
+      <option>Design</option>
+      <option>Implementation</option>
+      <option>Maintenance</option>
+      <option>Completed</option>
+    </select>
+
+    <input id="progress" type="number" min="0" max="100" placeholder="Progress %">
+  </div>
+
+  <button id="submitBtn">Add Project</button>
+</section>
+
+<section class="toolbar">
+  <input type="text" id="searchInput" placeholder="Search project...">
+
+  <select id="filterStatus">
+    <option value="All">All Status</option>
     <option>Planning</option>
     <option>Analysis</option>
     <option>Design</option>
     <option>Implementation</option>
     <option>Maintenance</option>
+    <option>Completed</option>
   </select>
-  <input id="progress" type="number" placeholder="Progress %">
-  <button onclick="addProject()">Add</button>
 </section>
 
 <section class="table-section">
-  <h2>Project List</h2>
   <table id="projectTable">
     <thead>
       <tr>
@@ -42,8 +99,10 @@
         <th>Status</th>
         <th>Progress</th>
         <th>Duration</th>
+        <th>Action</th>
       </tr>
     </thead>
+
     <tbody></tbody>
   </table>
 </section>
@@ -53,20 +112,25 @@
     <h3>Status Distribution</h3>
     <canvas id="statusChart"></canvas>
   </div>
+
   <div class="chart-box">
     <h3>Project Type</h3>
     <canvas id="typeChart"></canvas>
   </div>
-  <div class="chart-box">
-    <h3>Progress Overview</h3>
+
+  <div class="chart-box large-chart">
+    <h3>Project Progress</h3>
     <canvas id="progressChart"></canvas>
+  </div>
+
+  <div class="chart-box">
+    <h3>Category Distribution</h3>
+    <canvas id="categoryChart"></canvas>
   </div>
 </section>
 
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js/app.js"></script>
-
 </body>
 </html>
