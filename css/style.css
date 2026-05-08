@@ -1,66 +1,140 @@
-body {
-  font-family: Arial;
-  background: #f4f6f8;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  padding: 30px;
 }
 
 header {
-  background: #1f2937;
-  color: white;
-  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.container {
+.summary-cards {
+  display: flex;
+  gap: 15px;
+}
+
+.card {
+  background: #1e293b;
   padding: 20px;
+  border-radius: 14px;
+  min-width: 160px;
 }
 
-.form-section input, .form-section select {
-  margin: 5px;
-  padding: 8px;
+.card span {
+  color: #94a3b8;
+  font-size: 14px;
 }
 
-button {
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-table {
-  width: 100%;
-  background: white;
-  border-collapse: collapse;
+.card h2 {
   margin-top: 10px;
 }
 
-td, th {
-  padding: 10px;
-  border: 1px solid #ddd;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.status {
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: white;
+.form-section,
+.table-section,
+.chart-box,
+.toolbar {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 18px;
 }
 
-.Planning { background: #A7E1FD; color:black; }
-.Analysis { background: #3B77D8; }
-.Design { background: #FFE8A1; color:black; }
-.Implementation { background: #E4BC3D; color:black; }
-.Maintenance { background: #C4DFB3; color:black; }
-
-.progress-bar {
-  height: 8px;
-  background: green;
-}
-
-.charts {
+.form-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
 
-.chart-box {
-  background: white;
-  padding: 10px;
+input,
+select,
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 20px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+.toolbar {
+  display: flex;
+  gap: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: left;
+}
+
+thead {
+  background: #334155;
+}
+
+tr:nth-child(even) {
+  background: #273449;
+}
+
+.progress-container {
+  width: 100%;
+  background: #334155;
+  border-radius: 20px;
+  height: 10px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #3b82f6;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.large-chart {
+  grid-column: span 2;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+canvas{
+  max-height:300px;
 }
